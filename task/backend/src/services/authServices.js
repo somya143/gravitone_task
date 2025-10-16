@@ -1,5 +1,5 @@
-import { createUser, findUserByEmailAndRole } from "../dao/authDao";
-import { generateToken } from "../utils/jwt";
+import { createUser, findUserByEmailAndRole } from "./../dao/authDao.js";
+import { generateToken } from "../utils/jwt.js";
 
 export const registerUser = async (name, email, password, role) => {
     const existingUser = await findUserByEmailAndRole(email, role)

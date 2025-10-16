@@ -1,4 +1,4 @@
-import user from "../model/authModel";
+import user from "./../model/authModel.js";
 
 // database operation of creating and finding user in dao
 
