@@ -1,12 +1,19 @@
-import user from "./../model/authModel.js";
+import User from "./../model/authModel.js";
 
 // database operation of creating and finding user in dao
 
-export const createUser = async(data) => {
-    const user = await user(data);
-    return user.save();
+const createUser = async(data) => {
+    const createUser = await User(data);
+    return createUser.save();
 };
 
-export const findUserByEmailAndRole = async(email, role) => {
-    return await user.findOne({ email, role });
-}
+const findUserByEmailAndRole = async (email, role) => {
+  if (role) {
+    return await User.findOne({ email, role });
+  } else {
+    return await User.findOne({ email });
+  }
+};
+
+
+export default {createUser,findUserByEmailAndRole}
